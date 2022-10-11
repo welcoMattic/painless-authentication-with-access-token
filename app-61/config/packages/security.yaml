@@ -3,22 +3,34 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
 
     providers:
-        app_user_provider:
+        user_provider:
             entity:
-                class: App\Entity\App
-                property: apiKey
+                class: App\Entity\User
+                property: email
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
+        api:
+            pattern: ^/api
+            stateless: true
             lazy: true
-            provider: app_user_provider
             custom_authenticator: App\Security\ApiKeyAuthenticator
+        admin:
+            lazy: true
+            provider: user_provider
+            custom_authenticator: App\Security\AdminAuthenticator
+            logout:
+                path: app_logout
 
     access_control:
-         - { path: ^/secret/formula, roles: ROLE_ADMIN }
+         - { path: ^/api, roles: ROLE_API_CLIENT, requires_channel: https }
+         - { path: ^/admin, roles: ROLE_ADMIN }
+
+    role_hierarchy:
+        ROLE_API_CLIENT: ROLE_USER
+        ROLE_ADMIN: ROLE_USER
 
 when@test:
     security:
