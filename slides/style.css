@@ -1,0 +1,23 @@
+.progress {
+    transition: width .2s linear;
+    /*transform: perspective(200px) rotateX(-140deg);*/
+    transform: skew(60deg,0deg);
+    background-color: #f7d325;
+}
+
+.slidev-layout .list-none ul {
+    list-style-type: none;
+}
+
+.slidev-layout .list-none li {
+    line-height: 1.8em;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.slidev-layout:not(.intro-image) h1 {
+    background-color: black;
+    padding: 0.3em;
+    color: #f8fafc; /* slate-50 */
+    margin-bottom: 1em;
+}
