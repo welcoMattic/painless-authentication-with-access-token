@@ -4,10 +4,10 @@
   "scripts": {
     "build": "slidev build -o ../docs --base /painless-authentication-with-access-token/",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export --output slides-deck.pdf -c"
   },
   "dependencies": {
-    "@slidev/cli": "^0.34.3",
+    "@slidev/cli": "^0.36",
     "@slidev/theme-apple-basic": "^0.20.0"
   },
   "devDependencies": {

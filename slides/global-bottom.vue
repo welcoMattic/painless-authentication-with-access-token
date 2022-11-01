@@ -2,6 +2,6 @@
   <footer v-if="$slidev.nav.currentPage > 1">
     <span class="absolute bottom-3 left-4 text-gray-500 font-300">{{ $slidev.nav.currentPage }}</span>
     <Progress></Progress>
-    <img src="/images/symfonycon-logo-transparent.png" alt="SymfonyCon Logo" class="absolute bottom-1 right-2 w-32"/>
+    <img src="/images/symfonycon-logo-transparent.png" alt="SymfonyCon Logo" class="absolute bottom-1 right-2 w-32 conference-logo"/>
   </footer>
 </template>

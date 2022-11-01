@@ -1,13 +1,21 @@
-# SymfonyCon Disneyland Paris 2022 - Painless authentication with access tokens
+# Painless authentication with access tokens
 
 ## Demo applications
 
-### Old fashion way with Symfony < 6.2
+### Old fashion way with Symfony 6.1
 
+- With a custom Authenticator
 
-### With AccessToken Authenticator, Symfony >= 6.2
+### With AccessToken Authenticator, Symfony 6.2
 
+- Using built-in AccessTokenAuthenticator
+  - Using a custom TokenHandler
+
+There's also an example with JWT
+
+- Using built-in AccessTokenAuthenticator
+    - Using a custom JwtHandler and Lcobucci/JWT library
 
 ## Slides
 
-With [sli.dev](https://sli.dev/)
+Built with [sli.dev](https://sli.dev/)

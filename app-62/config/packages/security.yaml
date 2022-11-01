@@ -19,13 +19,13 @@ security:
             provider: user_provider
             access_token:
                 token_handler: App\Security\TestAccessTokenHandler
-#        api_jwt:
-#            pattern: ^/api/jwt
-#            stateless: true
-#            lazy: true
-#            provider: user_provider
-#            access_token:
-#                token_handler: App\Security\JwtHandler
+        api_jwt:
+            pattern: ^/jwt/api
+            stateless: true
+            lazy: true
+            provider: user_provider
+            access_token:
+                token_handler: App\Security\JwtHandler
         admin:
             lazy: true
             provider: user_provider
