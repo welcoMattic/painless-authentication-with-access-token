@@ -24,7 +24,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Disney Scenarios Manager <small>(Symfony 6.1)</small>');
+            ->setTitle('Marvel Scenarios Manager <small>(Symfony 6.1)</small>');
     }
 
     public function configureMenuItems(): iterable

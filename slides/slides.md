@@ -30,6 +30,52 @@ About Core Team, today is a bit special for me because last year, day for day on
 -->
 
 ---
+layout: image-right
+image: '/images/menu.jpg'
+---
+
+# 🍽 On the menu
+
+<v-click>
+
+1. Access token, **what is it?**
+
+</v-click>
+
+<v-click>
+
+2. Implementation with **Symfony 6.1**
+
+</v-click>
+
+<v-click>
+
+3. Time travel
+
+</v-click>
+
+<v-click>
+
+4. Implementation with **Symfony 6.2**
+
+</v-click>
+
+<v-click>
+
+5. Code exemples
+
+</v-click>
+
+<v-click>
+
+6. In the future?
+
+</v-click>
+
+
+<Credits link="https://unsplash.com/@nate_dumlao" name="Nathan Dumlao" side="left"></Credits>
+
+---
 layout: section
 ---
 

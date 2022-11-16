@@ -18,7 +18,7 @@ class AdminSecurityController extends AbstractController
         return $this->render('@EasyAdmin/page/login.html.twig', [
             'error' => $error,
             'last_username' => $lastUsername,
-            'page_title' => '<h1 style="text-align: center;">Disney Scenarios Manager <small>(Symfony 6.2)</small></h1>',
+            'page_title' => '<h1 style="text-align: center;">Marvel Scenarios Manager <small>(Symfony 6.2)</small></h1>',
             'translation_domain' => 'admin',
             'csrf_token_intention' => 'authenticate',
             'target_path' => $this->generateUrl('admin'),
