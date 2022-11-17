@@ -73,7 +73,7 @@ image: '/images/menu.jpg'
 </v-click>
 
 
-<Credits link="https://unsplash.com/@nate_dumlao" name="Nathan Dumlao" side="left"></Credits>
+<Credits link="https://unsplash.com/@nate_dumlao" name="Nathan Dumlao" side="right"></Credits>
 
 ---
 layout: section

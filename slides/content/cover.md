@@ -8,7 +8,7 @@ image: images/cover.jpg
   <h2>with Access Tokens</h2>
 </div>
 
-<img src="/images/symfonycon-logo-darkmode-transparent.png" alt="SymfonyCon Logo" class="absolute bottom-1 right-2 w-32" />
+<img src="/images/symfonycon-logo-darkmode-transparent.png" alt="SymfonyCon Logo" class="absolute bottom-7 right-10 w-32" />
 
 <div class="absolute bottom-16 left-10 text-slate-200 font-serif">
     <img class="filter drop-shadow-md ml-auto ml-0 mb-4 clothoid-corner" src="/images/me.jpg" alt="Mathieu Santostefano" width="130"/>
