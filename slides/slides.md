@@ -62,7 +62,7 @@ image: '/images/menu.jpg'
 
 <v-click>
 
-5. Code exemples
+5. Code examples
 
 </v-click>
 
@@ -709,6 +709,12 @@ layout: section
 
 > ✨ All this via configuration!
 
+<style>
+  blockquote {
+    margin-top: 20px;
+  }
+</style>
+
 <!--
 This brand new authenticator will take care of the token extraction for you. By default, it can extract a token from the header, the query string or the request body. If you need to extract the token from elsewhere, you can write your own token extractor. 
 
@@ -1026,7 +1032,7 @@ layout: section
 
 # <img src="/images/jwt.svg" width="64" class="inline -mt-2" /> 6.2 With a JWT issued by your Symfony app
 
-> with [lcobucci/jwt](https://github.com/lcobucci/jwt) library
+> with [lcobucci/jwt](https://github.com/lcobucci/jwt) <br> <small>(or [web-token/jwt-checker](https://github.com/web-token/jwt-checker))</small>
 
 ---
 
