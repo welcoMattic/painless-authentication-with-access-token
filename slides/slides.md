@@ -91,12 +91,6 @@ layout: section
 
 # 🔒 Who is working with the new Symfony Security?
 
-<v-click>
-
-Thank you for it, [Wouter](https://github.com/WouterJ) 🙏
-
-</v-click>
-
 <!--
 Who is working with the new Symfony Security (released in 5.1)?
 
@@ -934,19 +928,18 @@ Of course, there are some other configuration entries if you need to use your ow
 class AccessTokenHandler implements AccessTokenHandlerInterface
 {
     public function __construct(
-        private readonly UserRepository $userRepository,
-        private readonly string $env,
+        private readonly UserRepository $userRepository
     ) {}
 
-    public function getUserIdentifierFrom(string $token): string
+    public function getUserBadgeFrom(string $accessToken): UserBadge
     {
-        $user = $this->userRepository->findOneByApiKey($token);
+        $user = $this->userRepository->findOneByApiKey($accessToken);
 
         if ($user === null) {
             throw new BadCredentialsException('Invalid credentials.');
         }
 
-        return $user->getUserIdentifier();
+        return new UserBadge($user->getUserIdentifier());
     }
 }
 ```
@@ -997,7 +990,7 @@ class JwtHandler implements AccessTokenHandlerInterface
         private readonly HttpClientInterface $oidcHttpClient,
     ) {}
 
-    public function getUserIdentifierFrom(string $accessToken): string
+    public function getUserBadgeFrom(string $accessToken): UserBadge
     {
         try {
             $userInfo = $this->oidcHttpClient->request('GET', 'protocol/openid-connect/userinfo', [
@@ -1007,7 +1000,7 @@ class JwtHandler implements AccessTokenHandlerInterface
             throw new BadCredentialsException($e->getMessage());
         }
 
-        return $userInfo['email'];
+        return new UserBadge($userInfo['email']);
     }
 }
 ```
@@ -1075,7 +1068,7 @@ class JwtHandler implements AccessTokenHandlerInterface
         private readonly Validator $jwtValidator = new Validator(),
     ) {}
 
-    public function getUserIdentifierFrom(string $accessToken): string
+    public function getUserBadgeFrom(string $accessToken): UserBadge
     {
         $jwt = $this->jwtParser->parse($accessToken);
         $timezone = new \DateTimeZone('Europe/Paris');
@@ -1090,7 +1083,7 @@ class JwtHandler implements AccessTokenHandlerInterface
             throw new BadCredentialsException($e->getMessage());
         }
 
-        return $jwt->claims()->get(RegisteredClaims::SUBJECT);
+        return new UserBadge($jwt->claims()->get(RegisteredClaims::SUBJECT));
     }
 }
 ```
@@ -1116,24 +1109,18 @@ A dozen lines of yaml and some twenty-five lines of PHP, it's enough to handle a
 
 ---
 
-# API Platform plans to support <br> OpenID Connect authentication <img src="/images/api-platform.png" class="absolute inline right-20 top-15" width="72"/>
+# Symfony will support OpenID Connect authentication
 
-https://github.com/api-platform/demo/pull/265
+https://github.com/symfony/symfony/pull/48272
 
-<img src="/images/apip-pr-265.png" width="700" class="mx-auto"/>
-
-<!--
-Good news! Soon, API Platform plans to provide an OidcTokenHandler. 
-It gives you the possibility easily setup access token auth with OIDC server, only with configuration.
-
-Don't hesitate to browse the pull request and bring your help!
--->
+<img src="/images/pr-48272.png" width="700" class="mx-auto"/>
 
 ---
 
 # 💫 In the future?
 
-* Add a native JwtHandler to Symfony?
+* ~~Add a native JwtHandler to Symfony?~~ (Thanks Vincent Chalamon)
+* ~~Add a native CASHandler?~~ (Thanks Nicolas Attard)
 * Add a native SamlHandler to Symfony?
 * Add a native BiscuitHandler to Symfony?
 
@@ -1220,6 +1207,7 @@ class: text-center
 # Guillaume
 # Vincent
 # Florent
+# Nicolas
 
 <div class="mt-12"></div>
 

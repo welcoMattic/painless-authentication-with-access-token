@@ -7,7 +7,7 @@
     "export": "slidev export --output slides-deck.pdf -c"
   },
   "dependencies": {
-    "@slidev/cli": "^0.36",
+    "@slidev/cli": "^0.40.2",
     "@slidev/theme-apple-basic": "^0.20.0"
   },
   "devDependencies": {
